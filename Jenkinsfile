@@ -1,6 +1,8 @@
 node {
 try
 {
+	sh echo 'email testing'
+}
 catch (e) {
     // If there was an exception thrown, the build failed
     currentBuild.result = "FAILED"
@@ -12,5 +14,4 @@ catch (e) {
              subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) Build is Success",
              body: '''${SCRIPT, template="groovy-text.template"}''', "Please go to ${env.BUILD_URL}.")
     }  
-    }
     }
