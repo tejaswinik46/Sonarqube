@@ -9,9 +9,10 @@ catch (e) {
     throw e
   } finally {
     // Success or failure, always send notifications
+	buildStatus =  buildStatus ?: 'SUCCESSFUL'
 	def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
     mail (to: 'tkoritala@ameren.com',
-             subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) Build is Success",
+             subject: subject,
              body: '''${SCRIPT, template="groovy-text.template"}''', "Please go to ${env.BUILD_URL}.")
     }  
     }
