@@ -16,7 +16,7 @@ def notifyBuild(String buildStatus = 'STARTED') {
   // build status of null means successful
 	buildStatus =  buildStatus ?: 'SUCCESSFUL'
 	def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-    mail (to: 'tkoritala@ameren.com',
+    mail (to: 'tejaswini.koritala@gmail.com',
              subject: subject,
              body: '''${SCRIPT, template="groovy-text.template"}''', "Please go to ${env.BUILD_URL}.")
     }  
