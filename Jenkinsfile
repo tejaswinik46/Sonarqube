@@ -20,3 +20,8 @@ def notifyBuild(String buildStatus = 'STARTED') {
              subject: 'subject',
              body: '${SCRIPT, template="groovy-text.template"}')
     }  
+
+
+
+
+testing
