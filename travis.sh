@@ -1,5 +1,4 @@
 #!/bin/sh
-
 if [ "${TRAVIS_PULL_REQUEST}" != "false" ] 
 then
 	echo "Running SonarQube analysis for Pull Request '${TRAVIS_PULL_REQUEST}'"
